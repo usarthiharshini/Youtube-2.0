@@ -14,19 +14,20 @@ const fetchData=async()=>{
   
 
 }
-console.log(videos);
+console.table(videos);
     useEffect(()=>{
       fetchData();
     },[])
     return (<div className="main">
        {videos.map((video)=>{
         return <div key={video.id}>
-     <VideoCard image={video.snippet.thumbnails.maxres.url}
+     <VideoCard image={video.snippet.thumbnails.standard.url}
      
      title={video.snippet.title}
      channelTitle={video.snippet.channelTitle}
      viewCount={video.statistics.viewCount}
      time={video.snippet.publishedAt}
+     id={video.id}
      />
         </div>
        })}

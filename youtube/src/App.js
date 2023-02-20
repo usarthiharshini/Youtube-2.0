@@ -2,6 +2,11 @@
 import { useEffect ,useState} from 'react';
 import './App.css';
 import Home from './Components/Home';
+import Navbar from './Components/Navbar';
+import Sidebar from './Components/Sidebar';
+import Main from './Components/Main';
+import Tagsbar from './Components/Tagsbar';
+import Router from './Components/Router';
 
 
 function App() {
@@ -18,8 +23,18 @@ function App() {
   console.log(vi);
   return (
     <div className="App">
-     <Home/>
-
+     <Navbar/>
+        
+        
+        <div className="container">
+           <Sidebar/>
+           <div className="emo">
+             <Tagsbar/>
+             <Router/>
+           </div>
+            
+        </div>
+     
  </div>
   );
 }

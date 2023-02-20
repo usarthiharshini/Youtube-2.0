@@ -1,6 +1,8 @@
+import Extra from "./Extra";
+
 function Tagsbar() {
     return ( <div className="tagsbar">
-        tagsbar
+       <Extra/>
     </div> );
 }
 

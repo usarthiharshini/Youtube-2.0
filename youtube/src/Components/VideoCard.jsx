@@ -3,13 +3,14 @@
 
 
 import Avatar from '@mui/material/Avatar';
-import { useState } from 'react';
+import { memo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { format, render, cancel, register } from 'timeago.js';
 
-function  VideoCard({image,title,channelTitle,viewCount,time}){
+function  VideoCard({image,title,channelTitle,viewCount,time,id}){
 
     const [vCount,setvCount] = useState(viewCount)
-  
+     const navigate = useNavigate();
 
     // format views count
     if(vCount >= 1000 && vCount <1000000){
@@ -29,7 +30,11 @@ function  VideoCard({image,title,channelTitle,viewCount,time}){
   const past=format(pas[0])
   //console.log(format(pas[0]));
 
-    return <div className="video-card">
+const goToVideo=()=>{
+   navigate(`/watch?v=${id}`)
+}
+
+    return <div className="video-card" onClick={goToVideo}>
         <div >
             <img className="thumbnail" src={image} alt='title'/>
         </div>
@@ -46,4 +51,4 @@ function  VideoCard({image,title,channelTitle,viewCount,time}){
         </div>
     </div>
 }
-export default VideoCard;
+export default memo(VideoCard);

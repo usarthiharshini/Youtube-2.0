@@ -13,7 +13,7 @@ code {
     monospace;
 }
 
-.home{
+.App{
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -107,7 +107,9 @@ p{
 }
 .main{
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  /* grid-template-columns: repeat(4,1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(267px, 1fr));
+
   gap: 20px;
  
 }
@@ -136,4 +138,16 @@ p{
  font-weight: 400;
  margin-bottom: 5px;
  /* background-color: blue; */
+}
+.video-container{
+  background-color: aliceblue;
+  display: flex;
+
+}
+.video-section{
+  background-color: bisque;
+
+}
+.suggestions{
+  background-color: aquamarine;
 }
